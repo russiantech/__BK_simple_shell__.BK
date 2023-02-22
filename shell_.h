@@ -19,8 +19,8 @@
 
 /* for command chaining */
 #define CMD_NORM	0
-#define CMD_OR		1
-#define CMD_AND		2
+#define CMD_OR	1
+#define CMD_AND	2
 #define CMD_CHAIN	3
 
 /* for convert_number() */
@@ -36,7 +36,6 @@
 
 extern char **environ;
 
-
 /**
  * struct liststr - singly linked list
  * @num: the number field
@@ -51,23 +50,22 @@ typedef struct liststr
 } list_t;
 
 /**
- * struct passinfo - contains pseudo-arguements to pass into a function,
+ * struct passinfo - contains pseudo arguments to pass into a function,
  * allowing uniform prototype for function pointer struct
- * @arg: a string generated from getline containing arguements
- * @argv:an array of strings generated from arg
+ * @arg: a string generated from  getline containing arguments
+ * @argv: an array of strings generated from arg
  * @path: a string path for the current command
  * @argc: the argument count
  * @line_count: the error count
- * @err_num: the error code for exit()s
- * @linecount_flag: if on count this line of input
+ * @linecount_flag: if on count, count this line of input
  * @fname: the program filename
- * @env: linked list local copy of environ
- * @environ: custom modified copy of environ from LL env
+ * @env: linked list, local copy of environ
+ * @environ: custom modified copy of environ from ll env
  * @history: the history node
  * @alias: the alias node
  * @env_changed: on if environ was changed
- * @status: the return status of the last exec'd command
- * @cmd_buf: address of pointer to cmd_buf, on if chaining
+ * @status: the return status of the last exec 'd command
+ * @cmd_buf: address of pointer to cmd _buf, on if chaining
  * @cmd_buf_type: CMD_type ||, &&, ;
  * @readfd: the fd from which to read line input
  * @histcount: the history line number count
@@ -79,7 +77,6 @@ typedef struct passinfo
 	char *path;
 	int argc;
 	unsigned int line_count;
-	int err_num;
 	int linecount_flag;
 	char *fname;
 	list_t *env;
@@ -89,15 +86,15 @@ typedef struct passinfo
 	int env_changed;
 	int status;
 
-	char **cmd_buf; /* pointer to cmd ; chain buffer, for memory mangement */
+	char **cmd_buf; /* pointer to cmd ; chain buffer;, for memory management */
 	int cmd_buf_type; /* CMD_type ||, &&, ; */
 	int readfd;
 	int histcount;
 } info_t;
 
 #define INFO_INIT \
-{NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
-		0, 0, 0}
+{NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, \
+NULL, NULL, NULL, 0, 0, NULL, 0, 0, 0}
 
 /**
  * struct builtin - contains a builtin string and related function
@@ -109,7 +106,6 @@ typedef struct builtin
 	char *type;
 	int (*func)(info_t *);
 } builtin_table;
-
 
 /* toem_shloop.c */
 int hsh(info_t *, char **);
@@ -134,7 +130,7 @@ int _putsfd(char *str, int fd);
 /* toem_string.c */
 int _strlen(char *);
 int _strcmp(char *, char *);
-char *starts_with(const char *, const char *);
+char *starts_with(const char *, char *);
 char *_strcat(char *, char *);
 
 /* toem_string1.c */
@@ -143,12 +139,12 @@ char *_strdup(const char *);
 void _puts(char *);
 int _putchar(char);
 
-/* toem_exits.c */
-char *_strncpy(char *, char *, int);
+/* toem_exists.c */
+char *_strcpy(char *, char *, int);
 char *_strncat(char *, char *, int);
 char *_strchr(char *, char);
 
-/* toem_tokenizer.c */
+/* toem_tokenizer */
 char **strtow(char *, char *);
 char **strtow2(char *, char);
 
@@ -169,20 +165,20 @@ int _atoi(char *);
 /* toem_errors1.c */
 int _erratoi(char *);
 void print_error(info_t *, char *);
-int print_d(int, int);
+int  print_d(int, int);
 char *convert_number(long int, int, int);
 void remove_comments(char *);
 
-/* toem_builtin.c */
+/* toem_builtin */
 int _myexit(info_t *);
 int _mycd(info_t *);
 int _myhelp(info_t *);
 
-/* toem_builtin1.c */
+/* toem_built1.c */
 int _myhistory(info_t *);
 int _myalias(info_t *);
 
-/*toem_getline.c */
+/* toem_getline.c */
 ssize_t get_input(info_t *);
 int _getline(info_t *, char **, size_t *);
 void sigintHandler(int);
@@ -233,4 +229,3 @@ int replace_vars(info_t *);
 int replace_string(char **, char *);
 
 #endif
-
