@@ -1,13 +1,14 @@
 #include "shell.h"
 
 /**
- * is_chain - test if current char in buffer is a chain delimeter
- * @info: the parameter struct
- * @buf: the char buffer
- * @p: address of current position in buf
+ * is_chain - checks if current char in buffer is chain delimeter
+ * @info: parameter struct
+ * @buf: char buffer
+ * @p: adrs of current position in buffer
  *
- * Return: 1 if chain delimeter, 0 otherwise
+ * Return: 1 if chain delimeter, else - 0
  */
+
 int is_chain(info_t *info, char *buf, size_t *p)
 {
 	size_t j = *p;
@@ -36,15 +37,16 @@ int is_chain(info_t *info, char *buf, size_t *p)
 }
 
 /**
- * check_chain - checks we should continue chaining based on last status
- * @info: the parameter struct
- * @buf: the char buffer
- * @p: address of current position in buf
- * @i: starting position in buf
- * @len: length of buf
+ * check_chain - ensure continued chaining based on last status
+ * @info: parameter struct
+ * @buf: char buffer
+ * @p: adrs of current position in buf
+ * @i: start position in buff
+ * @len: length of buff
  *
- * Return: Void
+ * Return: (Void)
  */
+
 void check_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
 {
 	size_t j = *p;
@@ -70,11 +72,12 @@ void check_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
 }
 
 /**
- * replace_alias - replaces an aliases in the tokenized string
- * @info: the parameter struct
+ * replace_alias - replaces an alias in tokenized str
+ * @info: parameter struct
  *
- * Return: 1 if replaced, 0 otherwise
+ * Return: 1(replaced), else 0
  */
+
 int replace_alias(info_t *info)
 {
 	int i;
@@ -99,11 +102,12 @@ int replace_alias(info_t *info)
 }
 
 /**
- * replace_vars - replaces vars in the tokenized string
- * @info: the parameter struct
+ * replace_vars - replace vars in tokenized str
+ * @info: parameter struct
  *
- * Return: 1 if replaced, 0 otherwise
+ * Return: 1 (replaced) else 0 if not
  */
+
 int replace_vars(info_t *info)
 {
 	int i = 0;
@@ -140,12 +144,13 @@ int replace_vars(info_t *info)
 }
 
 /**
- * replace_string - replaces string
- * @old: address of old string
- * @new: new string
+ * replace_string - will replace str
+ * @old: old str adrs
+ * @new: new str
  *
- * Return: 1 if replaced, 0 otherwise
+ * Return: 1 (replaced), 0 if not 
  */
+
 int replace_string(char **old, char *new)
 {
 	free(*old);
