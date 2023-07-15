@@ -1,1 +1,1 @@
-Project based on collaborations @ alx. Weldone and thanks to my partner Joy
+Project based on collaborations @ alx. Weldone and thanks to my partner(S)
