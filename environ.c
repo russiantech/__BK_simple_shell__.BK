@@ -1,6 +1,6 @@
 #include "shell.h"
 
-/** 
+/**
  * _myenv - prints the current environment
  * @info: Struct with args for maintaining
  *          const function prototype.
@@ -19,7 +19,7 @@ int _myenv(info_t *info)
  *          const function prototype.
  * @name: env var name
  *
- * Return: the val 
+ * Return: the va
  */
 
 char *_getenv(info_t *info, const char *name)

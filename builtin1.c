@@ -84,8 +84,8 @@ int print_alias(list_t *node)
 }
 
 /**
- * _myalias - similar to alias builtin 
- * @info: Struct with args for maintaining function prototype.
+ * _myalias - similar to alias builtin
+ * @info: Struct with args for func prototype.
  * Return: 0 everytime
  */
 

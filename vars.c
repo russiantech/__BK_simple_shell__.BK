@@ -148,7 +148,7 @@ int replace_vars(info_t *info)
  * @old: old str adrs
  * @new: new str
  *
- * Return: 1 (replaced), 0 if not 
+ * Return: 1 (replaced), 0 if not
  */
 
 int replace_string(char **old, char *new)

@@ -62,10 +62,10 @@ typedef struct liststr
  * @histcount: history line num count
  * @line_count: error count/amount
  * @err_num: error codes 4 exits
- * @linecount_flag: count this line of input if on 
+ * @linecount_flag: count this line of input if on
  * @fname: program name/file-name
  * @env: local copy of environ linked list
- * struct passinfo - Have pseudo-args to pass into a func,
+ * struct passinfo - Have pseudo-args to pass into a func
  * as prototype for funct pointer struct.
  * @arg: generated str from getline having args
  * @argv:an array[] of strs generated from arg
