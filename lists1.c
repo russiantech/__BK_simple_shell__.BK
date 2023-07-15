@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * list_len - determines length of linked list
- * @h: pointer to first node
+ * list_len - gets length of linked list
+ * @h: pointer to 1st node
  *
- * Return: size of list
+ * Return: size of list ..
  */
 size_t list_len(const list_t *h)
 {
@@ -19,11 +19,12 @@ size_t list_len(const list_t *h)
 }
 
 /**
- * list_to_strings - returns an array of strings of the list->str
- * @head: pointer to first node
+ * list_to_strings - gives us array of str of  list->str
+ * @head: pointer to 1st node
  *
- * Return: array of strings
+ * Return: [] of str
  */
+
 char **list_to_strings(list_t *head)
 {
 	list_t *node = head;
@@ -56,11 +57,12 @@ char **list_to_strings(list_t *head)
 
 
 /**
- * print_list - prints all elements of a list_t linked list
- * @h: pointer to first node
+ * print_list - gives all elements of list_t linked list[]
+ * @h: pointer to 1st node
  *
- * Return: size of list
+ * Return: list size ..
  */
+
 size_t print_list(const list_t *h)
 {
 	size_t i = 0;
@@ -79,13 +81,14 @@ size_t print_list(const list_t *h)
 }
 
 /**
- * node_starts_with - returns node whose string starts with prefix
- * @node: pointer to list head
- * @prefix: string to match
- * @c: the next character after prefix to match
+ * node_starts_with - returns node that has str starts with prefix
+ * @node: pointer to head of list 
+ * @prefix: str to match
+ * @c: next char after prefix to match
  *
- * Return: match node or null
+ * Return: match node or null here
  */
+
 list_t *node_starts_with(list_t *node, char *prefix, char c)
 {
 	char *p = NULL;
@@ -101,12 +104,13 @@ list_t *node_starts_with(list_t *node, char *prefix, char c)
 }
 
 /**
- * get_node_index - gets the index of a node
- * @head: pointer to list head
- * @node: pointer to the node
+ * get_node_index - gets the index[] of node
+ * @head: pointer to head of list
+ * @node: pointer to node
  *
- * Return: index of node or -1
+ * Return: node index or -1
  */
+
 ssize_t get_node_index(list_t *head, list_t *node)
 {
 	size_t i = 0;
